@@ -47,7 +47,7 @@ body>header>img {
     max-width: 420px;
 }
 
-body>section {
+body>div {
     width: 100%;
     background-color: yellow;
     flex-grow: 1;
@@ -57,19 +57,45 @@ body>section {
     align-items: center;
 }
 
-section#top {
+div#top-wrapper {
     padding-top: var(--gap-large);
 }
 
-section#bottom {
+div#bottom-wrapper {
     position: relative;
     justify-content: center;
 }
 
-section#bottom>button#enter {
+div#bottom-wrapper>button#enter {
     position: absolute;
     top: var(--gap-medium);
 }
 
+/*  |~~~~~~~~~~~~~~~~~~~|
+    |~~~~~~~~~~~~~~~~~~~|
+    |                   |
+/~~\|               /~~\|
+\__/  EVENT WINDOW  \__/ */
 
+article>section {
+    max-height: calc(100% - 2 * var(--gap-large));
+    width: calc(100% - 2 * var(--gap-large));
+    max-width: 690px;
 
+    /* deze dingen dienen voor het venster vast te centreren */
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* ESTHEATICS */
+    background-color: cornsilk;
+    padding: var(--gap-small);
+}
+
+article>section>header {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--gap-small);
+}
+article>section>header>button.close {height: 1.2rem; width: 1.2rem;}

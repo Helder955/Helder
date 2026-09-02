@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="description" content="A musical journey to let your mind wander off to new realms">  
 
     <meta property="og:url" content="https://helder.fixitup.be" />
@@ -15,24 +14,67 @@
     <script src="navigation.js" defer></script>
 
     <title>H E L D E R ♪ 2.0</title>
-    <!-- symbolen: ♪  ♫  ☼ -->
+    
 </head>
+<!-- handige symbolen: ♪ ♫ ☼ → × (dit is geen x, maar een maalteken: cleaner voor close-kruisjes)-->
 <body>
-    <section id="top">
+    <div id="top-wrapper">
         <nav class="hidden">
-            <button>Upcoming</button>
             <button>Concept</button>
         </nav>
-    </section>
+    </div>
     <header>
         <img src="media/logo.png" alt="logo van Helder" srcset="">
     </header>
-    <section id="bottom">
+    <div id="bottom-wrapper">
         <button id="enter">E N T E R</button>
-        <div>
-            <p>bottom navigation</p>            
+        <div id="events" class="hidden">
+            <!-- Hier komen de evenementen te staan -->
+
+            <article>
+                <button class="open">Evenement 1</button>
+                <section class="hidden">
+                    <header>
+                        <div>
+                            <h2>Titel van het evenement 1</h2>
+                            <time datetime="09-11-2026">09 september</time>                            
+                        </div>
+                        <button class="close">×</button>                     
+                    </header>
+
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem recusandae, sapiente unde, voluptas vel eum culpa inventore numquam omnis in tempora nam rem consequuntur corrupti quae, magnam dolorem dignissimos autem.</p>
+                    <nav></nav>
+                </section>
+            </article>
+            <article>
+                <button class="open">Evenement 2</button>
+                <section class="hidden">
+                    <header>
+                        <h2>Titel van het evenement 2</h2>
+                        <time datetime="11-11-2026">11/11</time>
+                        <button class="close">×</button>                     
+                    </header>
+
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem recusandae, sapiente unde, voluptas vel eum culpa inventore numquam omnis in tempora nam rem consequuntur corrupti quae, magnam dolorem dignissimos autem.</p>
+                    <nav></nav>
+                </section>
+            </article>
+            <article>
+                <button class="open">Evenement 3</button>
+                <section class="hidden">
+                    <header>
+                        <h2>Titel van het evenement 3</h2>
+                        <time datetime="16-11-2026">16/11</time>
+                        <button class="close">×</button>                     
+                    </header>
+
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem recusandae, sapiente unde, voluptas vel eum culpa inventore numquam omnis in tempora nam rem consequuntur corrupti quae, magnam dolorem dignissimos autem.</p>
+                    <nav></nav>
+                </section>
+            </article>
+          
         </div>
 
-    </section>
+    </div>
 </body>
 </html>
