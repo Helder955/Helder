@@ -4,4 +4,72 @@
     box-sizing: border-box;
 }
 
-:rppt
+:root {
+    --gap-small: 0.4rem;
+    --gap-medium: 1.2rem;
+    --gap-large: 2rem;
+}
+
+/*  |~~~~~~~~~~~~~~|
+    |~~~~~~~~~~~~~~|
+    |              |
+/~~\|          /~~\|
+\__/  GENERAL  \__/ */
+
+.hidden {display: none;}
+
+/*  |~~~~~~~~~~~~~~~~~~~~~|
+    |~~~~~~~~~~~~~~~~~~~~~|
+    |                     |
+/~~\|                 /~~\|
+\__/  MAIN STRUCTURE  \__/ */
+
+body {
+    width: 100vw;
+    height: 100svh;
+    
+    display: grid;
+    grid-template-rows:  1fr auto 1fr;
+
+
+    background-color: turquoise;
+}
+
+body>header {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body>header>img {
+    width: 80%;
+    max-width: 420px;
+}
+
+body>section {
+    width: 100%;
+    background-color: yellow;
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section#top {
+    padding-top: var(--gap-large);
+}
+
+section#bottom {
+    position: relative;
+    justify-content: center;
+}
+
+section#bottom>button#enter {
+    position: absolute;
+    top: var(--gap-medium);
+}
+
+
+
