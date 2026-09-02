@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "MADE TOMMY";
+    src: local("MADE TOMMY"), url('MADE_TOMMY.otf') format("opentype");
+}
+
 *, html {
     padding: 0;
     margin: 0;
@@ -5,10 +10,14 @@
 }
 
 :root {
-    --gap-small: 0.4rem;
+    --gap-small: 0.6rem;
     --gap-medium: 1.2rem;
     --gap-large: 2rem;
+    --color-text: white;
+    --color-bg: rgb(30, 30, 30);
+    --color-bg-transparant: rgba(30, 30, 30, 0.5);
 }
+
 
 /*  |~~~~~~~~~~~~~~|
     |~~~~~~~~~~~~~~|
@@ -17,6 +26,22 @@
 \__/  GENERAL  \__/ */
 
 .hidden {display: none;}
+html, * {color: var(--color-text); font-family: "MADE TOMMY"; font-weight: 600;}
+button {
+    background-color: var(--color-bg);
+    padding: var(--gap-small) var(--gap-medium);
+    border: none;
+    border-radius: 0;
+    letter-spacing: 0.25rem;
+    border: 2px solid var(--color-bg);
+}
+
+button:hover {
+    border: 2px solid var(--color-bg);
+    background-color: transparent;
+    color: var(--color-bg);
+}
+
 
 /*  |~~~~~~~~~~~~~~~~~~~~~|
     |~~~~~~~~~~~~~~~~~~~~~|
@@ -26,50 +51,57 @@
 
 body {
     width: 100vw;
-    height: 100svh;
-    
+    height: 100svh; 
     display: grid;
     grid-template-rows:  1fr auto 1fr;
-
-
-    background-color: turquoise;
 }
 
 body>header {
-    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-body>header>img {
-    width: 80%;
-    max-width: 420px;
-}
+body>header>img {width: 80%; max-width: 420px;}
 
 body>div {
     width: 100%;
-    background-color: yellow;
     flex-grow: 1;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+div#top-wrapper {padding-top: var(--gap-large);}
+div#bottom-wrapper {position: relative; justify-content: center;}
+div#bottom-wrapper>button#enter { position: absolute; top: var(--gap-large);}
 
-div#top-wrapper {
-    padding-top: var(--gap-large);
+
+/*  |~~~~~~~~~~~~~~~~~~~~~|
+    |~~~~~~~~~~~~~~~~~~~~~|
+    |                     |
+/~~\|                 /~~\|
+\__/  MAIN STRUCTURE  \__/ */
+
+div#top-wrapper>nav * {
+    letter-spacing: 0.25rem;
 }
 
-div#bottom-wrapper {
-    position: relative;
-    justify-content: center;
+
+/*  |~~~~~~~~~~~~~~~~~|
+    |~~~~~~~~~~~~~~~~~|
+    |                 |
+/~~\|             /~~\|
+\__/  EVENT LIST  \__/ */
+
+div#bottom-wrapper>div#events:not(.hidden) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-medium);
+}
+div#bottom-wrapper>div#events>article {
+    text-align: center;
 }
 
-div#bottom-wrapper>button#enter {
-    position: absolute;
-    top: var(--gap-medium);
-}
 
 /*  |~~~~~~~~~~~~~~~~~~~|
     |~~~~~~~~~~~~~~~~~~~|
@@ -89,7 +121,7 @@ article>section {
     transform: translate(-50%, -50%);
 
     /* ESTHEATICS */
-    background-color: cornsilk;
+    background-color: rgba(0, 0, 0, 0.5);
     padding: var(--gap-small);
 }
 
@@ -98,4 +130,4 @@ article>section>header {
     justify-content: space-between;
     gap: var(--gap-small);
 }
-article>section>header>button.close {height: 1.2rem; width: 1.2rem;}
+article>section>header>button.close {height: 1.2rem; width: 1.2rem; padding: 0;}
