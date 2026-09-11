@@ -17,8 +17,10 @@
     --free-zone: 0rem; /* ruimte die moet vrijgehouden worden minstens boven een evenementen-kader */
     --color-white: white;
     --color-white-transparant: rgba(255, 255, 255, 0.8);
-    --color-black: rgb(30, 30, 30);
-    --color-black-transparant: rgba(30, 30, 30, 0.8);
+    /* --color-black: rgb(30, 30, 30);
+    --color-black-transparant: rgba(30, 30, 30, 0.8); */
+    --color-black: rgb(0, 0, 0);
+    --color-black-transparant: rgba(0, 0, 0, 0.8);
 }
 
 
