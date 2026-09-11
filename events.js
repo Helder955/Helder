@@ -68,7 +68,7 @@ async function loadEvents() {
     timeEl.setAttribute('datetime', `${dd}-${mm}-${dateObj.getFullYear()}`);
     timeEl.textContent = longDate.format(dateObj);
 
-    node.querySelector('p').textContent = event.description || '';
+    node.querySelector('div').innerHTML = event.description || '';
 
     const nav = node.querySelector('nav');
     (event.links || []).forEach(link => {

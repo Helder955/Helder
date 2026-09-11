@@ -1,8 +1,9 @@
 [
   {
-    "title": "HELDER in je lijf",
-    "date": "2026-09-06",
-    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem recusandae, sapiente unde, voluptas vel eum culpa inventore numquam omnis in tempora nam rem consequuntur corrupti quae, magnam dolorem dignissimos autem.",
+    "title": "HELDER in je lijf!",
+    "date": "2026-10-06",
+    "description":
+        "<p>Lorem, <a href='https://rendeznous.be' target='_blank'>ipsum dolor</a> sit amet consectetur adipisicing elit. Voluptatem recusandae, sapiente unde, voluptas vel eum culpa inventore numquam omnis in tempora nam rem consequuntur corrupti quae, magnam dolorem dignissimos autem.</p>",
     "links": [
       { "label": "Inschrijven", "url": "https://example.com/inschrijven" }
     ]
@@ -10,7 +11,8 @@
   {
     "title": "Workshop ademhaling Workshop ademhaling Workshop ademhaling Workshop ademhaling",
     "date": "2026-10-12",
-    "description": "Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig.Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig.Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig.Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. ",
+    "description": 
+        "<p>Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners.</p><p>Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig.Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig.Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig.Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig. Een rustige sessie rond ademhalingstechnieken, geschikt voor beginners. Geen voorkennis nodig.</p>",
     "links": [
       { "label": "Meer info", "url": "https://example.com/ademhaling" },
       { "label": "Inschrijven", "url": "https://example.com/inschrijven-ademhaling" }
@@ -18,6 +20,7 @@
   },
   {
     "title": "Winterwandeling",
+
     "date": "2026-12-06",
     "description": "Een korte, laagdrempelige groepswandeling door het park, afgesloten met warme chocolademelk.",
     "links": []

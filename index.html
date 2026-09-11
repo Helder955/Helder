@@ -20,6 +20,11 @@
 </head>
 <!-- handige symbolen: ♪ ♫ ☼ → × (dit is geen x, maar een maalteken: cleaner voor close-kruisjes)-->
 <body>
+    <div class="background">
+        <video autoplay muted loop playsinline>
+            <source src="/media/video.mp4" type="video/mp4">
+        </video>
+    </div>
     <div id="top-wrapper">
         <nav class="hidden">
             <button>Concept</button>
@@ -34,19 +39,18 @@
             <!-- Hier komen de evenementen te staan -->
             <template id="event-template">
                 <article>
-                <button class="open"></button>
-                <section class="hidden">
-                    <header>
-                    <div>
-                        <h2></h2>
-                        <time></time>
-                    </div>
-                    <button class="close">×</button>
-                    </header>
-            
-                    <p></p>
-                    <nav></nav>
-                </section>
+                    <button class="open"></button>
+                    <section class="hidden">
+                        <button class="close">×</button>
+                        <header>
+                            <h2></h2>
+                            <time></time>
+                        </header>
+                        <div> 
+                        </div>
+
+                        <nav></nav>
+                    </section>
                 </article>
             </template>
             <article>

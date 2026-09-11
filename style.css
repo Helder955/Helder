@@ -13,9 +13,11 @@
     --gap-small: 0.6rem;
     --gap-medium: 1.2rem;
     --gap-large: 2rem;
-    --color-text: white;
-    --color-bg: rgb(30, 30, 30);
-    --color-bg-transparant: rgba(30, 30, 30, 0.5);
+    --free-zone: 0rem; /* ruimte die moet vrijgehouden worden minstens boven een evenementen-kader */
+    --color-white: white;
+    --color-white-transparant: rgba(255, 255, 255, 0.8);
+    --color-black: rgb(30, 30, 30);
+    --color-black-transparant: rgba(30, 30, 30, 0.8);
 }
 
 
@@ -26,19 +28,19 @@
 \__/  GENERAL  \__/ */
 
 .hidden {display: none;}
-html, * {color: var(--color-text); font-family: "MADE TOMMY"; font-weight: 600;}
+html, * {color: var(--color-white); font-family: "MADE TOMMY"; font-weight: 600;}
 button {
-    background-color: var(--color-bg);
+    background-color: var(--color-black);
     padding: var(--gap-small) var(--gap-medium);
     border: none;
     border-radius: 0;
     letter-spacing: 0.25rem;
-    border: 2px solid var(--color-bg);
+    border: 2px solid var(--color-black);
 }
 button:hover {
-    border: 2px solid var(--color-bg);
-    background-color: transparent;
-    color: var(--color-bg);
+    border: 2px solid var(--color-black);
+    background-color: var(--color-white-transparant);
+    color: var(--color-black);
 }
 
 
@@ -55,6 +57,24 @@ body {
     grid-template-rows:  1fr auto 1fr;
     overflow: hidden;
     padding: var(--gap-small);
+    background-image: url(/media/video.mp4);
+}
+
+div.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100svh; 
+
+    z-index: -2000;
+}
+
+div.background>video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 body>header {
@@ -100,7 +120,9 @@ div#bottom-wrapper>div#events:not(.hidden) {
     gap: var(--gap-medium);
 }
 div#bottom-wrapper>div#events>article {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+
 }
 
 
@@ -110,51 +132,77 @@ div#bottom-wrapper>div#events>article {
 /~~\|               /~~\|
 \__/  EVENT WINDOW  \__/ */
 
-
-article {
-    position: relative;
-}
+article>section { background-color: var(--color-white-transparant); }
+article>section * {color: var(--color-black);}
 
 article>section {
-    max-height: calc(100% - 2 * var(--gap-large));
-    width: calc(100% - 2 * var(--gap-large));
+    max-height: calc(100% - var(--free-zone) - 2 * var(--gap-small));
+    width: calc(100% - 2 * var(--gap-small));
     max-width: 690px;
-    overflow-y: auto; /* dit maakt het mogelijk om verticaal te scrollen indien text langer dan de window */
+
+    display: flex;
+    flex-direction: column;
 
     /* deze dingen dienen voor het venster vast te centreren */
     position:fixed;
-    top: 50%;
+    top: calc((var(--free-zone) + 100%) / 2);
     left: 50%;
     transform: translate(-50%, -50%);
 
-    /* ESTHEATICS */
-    background-color: rgba(0, 0, 0, 0.69);
-    padding: var(--gap-small);
+    border: 2px solid var(--color-black);
 }
 
 article>section>header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     gap: var(--gap-small);
+    padding: var(--gap-small);
 
-    position: absolute;
+    border-bottom: 1px solid var(--color-black);
 }
-article>section>header>button.close {
-    position:fixed;
+article>section>button.close {
+    position: absolute;
     right: var(--gap-small);
     top: var(--gap-small);
 
-    height: 1.2rem; 
-    width: 1.2rem; 
+    height: 2rem; 
+    width: 2rem; 
     aspect-ratio: 1/1;
     padding: 0;
-    border-radius: 0.6rem;
+    letter-spacing: 0;
+    font-size: 2rem;
+    text-box: trim-both cap alphabetic;
+    line-height: 0.6rem;
+    font-weight: 300;
+
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background-color: var(--color-text);
-    color: var(--color-bg);
-    border: 0;
+
+    color: var(--color-white);
+    background-color: var(--color-black-transparant);
+    border: 2px solid var(--color-white);
+}
+
+article>section>button.close:hover {
+    color: var(--color-black);
+    background-color: var(--color-white-transparant);
+}
+
+article>section>div {
+    flex-grow: 1;
+    overflow-y: auto; /* dit maakt het mogelijk om verticaal te scrollen indien text langer dan de window */
+
+    padding: var(--gap-small);
+}
+
+article>section>nav{
+    padding: var(--gap-small);
+    border-top: 1px solid var(--color-black);
+}
+
+p:not(:first-of-type) {
+    padding-top: var(--gap-medium);
 }
