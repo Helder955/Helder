@@ -10,6 +10,7 @@
 }
 
 :root {
+    --gap-mini: 0.2rem;
     --gap-small: 0.6rem;
     --gap-medium: 1.2rem;
     --gap-large: 2rem;
@@ -31,7 +32,7 @@
 html, * {color: var(--color-white); font-family: "MADE TOMMY"; font-weight: 600;}
 button {
     background-color: var(--color-black);
-    padding: var(--gap-small) var(--gap-medium);
+    padding: var(--gap-mini) var(--gap-small);
     border: none;
     border-radius: 0;
     letter-spacing: 0.25rem;
