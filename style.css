@@ -35,7 +35,6 @@ button {
     letter-spacing: 0.25rem;
     border: 2px solid var(--color-bg);
 }
-
 button:hover {
     border: 2px solid var(--color-bg);
     background-color: transparent;
@@ -55,6 +54,7 @@ body {
     display: grid;
     grid-template-rows:  1fr auto 1fr;
     overflow: hidden;
+    padding: var(--gap-small);
 }
 
 body>header {
@@ -110,10 +110,16 @@ div#bottom-wrapper>div#events>article {
 /~~\|               /~~\|
 \__/  EVENT WINDOW  \__/ */
 
+
+article {
+    position: relative;
+}
+
 article>section {
     max-height: calc(100% - 2 * var(--gap-large));
     width: calc(100% - 2 * var(--gap-large));
     max-width: 690px;
+    overflow-y: auto; /* dit maakt het mogelijk om verticaal te scrollen indien text langer dan de window */
 
     /* deze dingen dienen voor het venster vast te centreren */
     position:fixed;
@@ -122,7 +128,7 @@ article>section {
     transform: translate(-50%, -50%);
 
     /* ESTHEATICS */
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.69);
     padding: var(--gap-small);
 }
 
@@ -130,5 +136,25 @@ article>section>header {
     display: flex;
     justify-content: space-between;
     gap: var(--gap-small);
+
+    position: absolute;
 }
-article>section>header>button.close {height: 1.2rem; width: 1.2rem; padding: 0;}
+article>section>header>button.close {
+    position:fixed;
+    right: var(--gap-small);
+    top: var(--gap-small);
+
+    height: 1.2rem; 
+    width: 1.2rem; 
+    aspect-ratio: 1/1;
+    padding: 0;
+    border-radius: 0.6rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--color-text);
+    color: var(--color-bg);
+    border: 0;
+}
