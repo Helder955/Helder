@@ -105,3 +105,21 @@ async function loadEvents() {
 }
 
 loadEvents();
+
+function fixNewlinesInJsonStrings(rawText) {
+  let result = '', inString = false, escaped = false;
+  for (const ch of rawText) {
+    if (inString) {
+      if (escaped) { result += ch; escaped = false; }
+      else if (ch === '\\') { result += ch; escaped = true; }
+      else if (ch === '"') { result += ch; inString = false; }
+      else if (ch === '\n') { result += '\\n'; }
+      else if (ch === '\r') { /* skip */ }
+      else { result += ch; }
+    } else {
+      if (ch === '"') inString = true;
+      result += ch;
+    }
+  }
+  return result;
+}
