@@ -68,7 +68,11 @@ async function loadEvents() {
     timeEl.setAttribute('datetime', `${dd}-${mm}-${dateObj.getFullYear()}`);
     timeEl.textContent = longDate.format(dateObj);
 
-    node.querySelector('div').innerHTML = event.description || '';
+    const locationEl = node.querySelector('a.location');
+    locationEl.href = event.location_url;
+    locationEl.textContent = event.location_name;
+
+    node.querySelector('section>div').innerHTML = event.description || '';
 
     const nav = node.querySelector('nav');
     (event.links || []).forEach(link => {
@@ -88,13 +92,14 @@ async function loadEvents() {
   list.addEventListener('click', (e) => {
     const openBtn = e.target.closest('.open');
     if (openBtn) {
+      closeAll();
       const section = openBtn.nextElementSibling;
       section.classList.toggle('hidden');
       return;
     }
     const closeBtn = e.target.closest('.close');
     if (closeBtn) {
-      closeBtn.closest('section').classList.add('hidden');
+      closeAll()
     }
   });
 }

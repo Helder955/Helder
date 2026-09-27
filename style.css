@@ -34,10 +34,10 @@
 html, * {color: var(--color-white); font-family: "MADE TOMMY"; font-weight: 600;}
 button {
     background-color: var(--color-black);
-    padding: var(--gap-mini) var(--gap-small);
+    padding: var(--gap-mini);
     border: none;
     border-radius: 0;
-    letter-spacing: 0.25rem;
+    letter-spacing: 0.1rem;
     border: 2px solid var(--color-black);
 }
 button:hover {
@@ -152,7 +152,7 @@ article>section {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    border: 2px solid var(--color-black);
+    border: 1px solid var(--color-black);
 }
 
 article>section>header {
@@ -162,6 +162,18 @@ article>section>header {
     padding: var(--gap-small);
 
     border-bottom: 1px solid var(--color-black);
+}
+article>section>header>h2 {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    padding-right: calc(1.8rem + 1 * var(--gap-small));
+    /* color: var(--color-white);
+    text-shadow: #000 0px 0px 2px,   #000 0px 0px 2px,   #000 0px 0px 2px,
+             #000 0px 0px 2px,   #000 0px 0px 2px,   #000 0px 0px 2px; */
+}
+article>section>header>div {
+    display: flex;
+    justify-content: space-between;
 }
 article>section>button.close {
     position: absolute;
@@ -176,7 +188,7 @@ article>section>button.close {
     font-size: 1.8rem;
     text-box: trim-both cap alphabetic;
     line-height: 0.6rem;
-    font-weight: 300;
+    font-weight: 100;
 
 
     display: flex;
@@ -186,7 +198,7 @@ article>section>button.close {
 
     color: var(--color-black);
     background-color: transparent;
-    border: 2px solid var(--color-black);
+    border: 1px solid var(--color-black);
 }
 
 article>section>button.close:hover {
@@ -204,8 +216,39 @@ article>section>div {
 article>section>nav{
     padding: var(--gap-small);
     border-top: 1px solid var(--color-black);
+    display: flex;
+    gap: var(--gap-small);
 }
-
+p {
+    font-weight: 300;
+}
 p:not(:first-of-type) {
     padding-top: var(--gap-medium);
+}
+div#audio-toggle {
+    position: absolute;
+    bottom: var(--gap-small);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 900;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: var(--color-black);
+    padding: 0.4rem;
+}
+
+div#audio-toggle.muted {
+    position: relative; /* already absolute, but keep as anchor for ::after */
+}
+
+div#audio-toggle.muted::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 141%; /* diagonal across a square needs ~1.41x the side */
+    height: 1px;
+    background-color: var(--color-white);
+    transform: translate(-50%, -50%) rotate(-45deg);
+    pointer-events: none;
 }
