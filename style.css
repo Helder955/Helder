@@ -228,7 +228,6 @@ p:not(:first-of-type) {
     padding-top: var(--gap-medium);
 }
 div#audio-toggle {
-    max-width: 100%;
     position: absolute;
     bottom: var(--gap-small);
     left: 50%;
@@ -254,4 +253,8 @@ div#audio-toggle.muted::after {
     background-color: var(--color-white);
     transform: translate(-50%, -50%) rotate(-45deg);
     pointer-events: none;
+}
+
+div#audio-toggle>svg {
+        max-width: 100vw;
 }
