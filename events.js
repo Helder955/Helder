@@ -68,6 +68,9 @@ async function loadEvents() {
     dateEl.setAttribute('datetime', `${dd}-${mm}-${dateObj.getFullYear()}`);
     dateEl.textContent = longDate.format(dateObj);
 
+    const timeEl = node.querySelector('span#time');
+    timeEl.textContent = event.time;
+
 
 
     const locationEl = node.querySelector('a.location');
