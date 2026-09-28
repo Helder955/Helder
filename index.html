@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
+    <script src="audio.js" defer></script>
     <script src="events.js" defer></script>
     <script src="navigation.js" defer></script>    
     
@@ -28,7 +29,22 @@
     </div>
     <div id="top-wrapper">
         <nav class="hidden">
-            <button>Concept</button>
+            <article id="concept">
+                <button>Concept</button>
+                <section class="hidden window">
+                    <button class="close">×</button>
+                    <header>
+                        <h2>Welcome</h2>
+                    </header>
+                    <div> 
+                        <p>HELDER biedt een plek om even te deconnecteren van de digitale wereld, je te laten ontspannen, een moment te nemen en je geest leeg te maken.</p>
+                        <p>In ons alsmaar meer scherm gevuld leven kan een moment om te herconnecteren met jezelf, anderen en de ruimte rond je heel waardevol zijn.</p>
+                        <p>HELDER is een punt in de ruimte en tijd waar je even terug kan aarden in de fysieke wereld.</p>
+                        <p>Begeleid door meditatieve ambient muziek, samen of alleen met anderen, actief of passief, wacht innerlijke rust op jou.</p>
+                    </div>
+                </section>
+            </article>
+            
         </nav>
     </div>
     <header>
@@ -46,7 +62,10 @@
                         <header>
                             <h2></h2>
                             <div>
-                                <time></time>
+                                <div>
+                                    <time id="date"></time>
+                                    <time id="time"></time>
+                                </div>
                                 <a target="_blank" class="location"></a>
                             </div>
                             

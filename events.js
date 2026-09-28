@@ -64,9 +64,11 @@ async function loadEvents() {
 
     node.querySelector('h2').textContent = event.title;
 
-    const timeEl = node.querySelector('time');
-    timeEl.setAttribute('datetime', `${dd}-${mm}-${dateObj.getFullYear()}`);
-    timeEl.textContent = longDate.format(dateObj);
+    const dateEl = node.querySelector('time#date');
+    dateEl.setAttribute('datetime', `${dd}-${mm}-${dateObj.getFullYear()}`);
+    dateEl.textContent = longDate.format(dateObj);
+
+
 
     const locationEl = node.querySelector('a.location');
     locationEl.href = event.location_url;
@@ -92,14 +94,16 @@ async function loadEvents() {
   list.addEventListener('click', (e) => {
     const openBtn = e.target.closest('.open');
     if (openBtn) {
-      closeAll();
+      closeWindows();
+      hideButtons();
       const section = openBtn.nextElementSibling;
       section.classList.toggle('hidden');
       return;
     }
     const closeBtn = e.target.closest('.close');
     if (closeBtn) {
-      closeAll()
+      closeWindows();
+      openButtons();
     }
   });
 }

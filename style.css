@@ -239,10 +239,6 @@ div#audio-toggle {
     padding: 0.4rem;
 }
 
-div#audio-toggle.muted {
-    position: relative; /* already absolute, but keep as anchor for ::after */
-}
-
 div#audio-toggle.muted::after {
     content: "";
     position: absolute;
